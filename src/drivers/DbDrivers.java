@@ -1,5 +1,9 @@
 package drivers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class DbDrivers {
 
     DriverB[] driverB = {new DriverB("Санников И.П.", true, 5.0),
@@ -13,6 +17,13 @@ public class DbDrivers {
     DriverD[] driverD = {new DriverD("Малышев О.С.", true, 7.5),
             new DriverD("Васильев И.Д.", true, 6.5),
             new DriverD("Суровый В.И.", true, 15.5)};
+
+    public List<Driver> driversList = new ArrayList<>();
+    {
+        driversList.addAll(Arrays.asList(driverB).subList(0, 3));
+        driversList.addAll(Arrays.asList(driverC).subList(0, 3));
+        driversList.addAll(Arrays.asList(driverD).subList(0, 3));
+    }
 
 
     public String getNameDriverB(int i) {
